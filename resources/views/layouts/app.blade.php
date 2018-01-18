@@ -8,10 +8,15 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', '') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/colorbox.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/alertify.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/alertify.bootstrap.css') }}" rel="stylesheet">
+
+    @yield('css')
 </head>
 <body>
     <div id="app">
@@ -29,7 +34,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        {{ config('app.name', '') }}
                     </a>
                 </div>
 
@@ -76,5 +81,16 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/jquery.form.js') }}"></script>
+    <script src="{{ asset('js/jquery.colorbox.js') }}"></script>
+    <script src="{{ asset('js/alertify.min.js') }}"></script>
+    <script>
+    $(function(){
+        alertify.set('notifier','position', 'top-center');
+        alertify.set('notifier','delay', 6);
+    })
+    </script>
+
+    @yield('script')
 </body>
 </html>
