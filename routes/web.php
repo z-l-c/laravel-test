@@ -11,9 +11,9 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('404', function () {
+    return view('404');
+});
 
 Auth::routes();
 
@@ -25,6 +25,8 @@ Route::get('book/{id}', 'HomeController@openBook')->name('openBook');
 
 Route::post('deleteBook', 'HomeController@deleteBook')->name('deleteBook');
 
-Route::get('event', function () {
-    return view('book');
-})->name('event');
+Route::post('bookPages', 'HomeController@bookPages')->name('bookPages');
+
+Route::post('createPage', 'HomeController@createPage')->name('createPage');
+
+Route::post('uploadImage', 'HomeController@uploadImage')->name('uploadImage');

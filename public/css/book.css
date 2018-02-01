@@ -3,12 +3,16 @@
 	width: 1045px;
 	height: 600px;
 	margin: 5px;
+	position: relative;
 }
 
 .book-nav{
-	float: left;
+	/* float: left;
 	margin-top: 30px;
-	margin-left: 1px;
+	margin-left: 1px; */
+	position: absolute;
+	top: 30px;
+	right: 0;
 }
 
 .animated{
@@ -22,7 +26,7 @@
 #book{
 	width:942px;
 	height:600px;
-	float: left;
+	/* float: left; */
 }
 
 #book .page{
@@ -112,11 +116,70 @@
 
 #book .every-page{
 	padding: 20px;
-	padding-left: 35px;
 	position: absolute;
 	left: 0;
 	right: 0;
 	z-index: auto;
+}
+
+#book .odd .every-page{
+	padding-left: 35px;
+}
+
+#book .even .every-page{
+	padding-right: 35px;
+}
+
+#book .even .every-page .page-datebar{
+	float: left;
+	height: 30px;
+	border-bottom: 1px solid #ccc;
+	padding-right: 20px;
+}
+
+#book .odd .every-page .page-datebar{
+	float: right;
+	height: 30px;
+	border-bottom: 1px solid #ccc;
+	padding-left: 20px;
+}
+
+#book .every-page .page-datebar .page-date{
+	float: left;
+	line-height: 30px;
+	font-family: fantasy, Georgia;
+}
+
+#book .every-page .page-datebar .page-weather{
+	float: left;
+	margin-left: 5px;
+}
+
+#book .every-page .page-datebar .page-weather img{
+	width: 25px;
+}
+
+#book .even .every-page .page-edit{
+	float: right;
+	height: 30px;
+}
+
+#book .odd .every-page .page-edit{
+	float: left;
+	height: 30px;
+}
+
+#book .every-page .page-edit img{
+	width: 20px;
+}
+
+#book .every-page .page-content{
+	float: left;
+	width: 102%;
+	height: 500px;
+	margin-top: 12px;
+	word-wrap: break-word;
+	word-break: break-all;
 }
 
 #book .loader{

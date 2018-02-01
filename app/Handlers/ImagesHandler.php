@@ -40,31 +40,51 @@ class ImagesHandler
             $extension = $result[2];
         } else {
             $img = Image::make($file);
+
             $mime = $img->mime();
             $ext = explode('/', $mime);
             $extension = $ext[1]?:'png';
         }
 
+        //check ext
+        if(! in_array($extension, $this->allowed_ext)){
+            return [
+                'success' => false,
+                'msg' => 'Image type not allowed',
+            ];
+        }
+
         //file name of saved
         $file_name = $file_prefix . "_" . time() . "-" . str_random(10) . "." . $extension;
-
-        if(! in_array($extension, $this->allowed_ext)){
-            return false;
-        }
 
         //check path
         $this->check_path_exists($upload_path);
 
         if($file_type == "base64") {
             if(file_put_contents($upload_path."/".$file_name, base64_decode(str_replace($result[1], '', $file)))){
-                return $folder_name . "/" . $file_name;
+                return [
+                    'success' => true,
+                    'file_path' => $folder_name . "/" . $file_name,
+                ];
             }else{
-                return false;
+                return [
+                    'success' => false,
+                    'msg' => 'Image save error',
+                ];
             }
         } else {
             $img->save($upload_path."/".$file_name);
 
-            return $folder_name . "/" . $file_name;
+            //thumb
+            $width = $img->width()?:1;
+            $height = $img->height();
+            $img->resize(200, $height*200/$width);
+            $img->save($upload_path."/thumb-".$file_name);
+
+            return [
+                'success' => true,
+                'file_path' => "/" . $folder_name . "/thumb-" . $file_name,
+            ];
         }
 
     }

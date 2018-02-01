@@ -16,6 +16,12 @@ class Book extends Model
                     ->get();
     }
 
+    public function getBookById($userid, $id)
+    {
+        return $this->where('user_id', '=', $userid)
+                    ->find($id);
+    }
+
     public function createBook($userid, $data)
     {
         $this->fill($data);

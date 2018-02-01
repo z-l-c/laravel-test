@@ -28,7 +28,7 @@
 
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    My Shelf
+                    Shelf
                     <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#createModal">+ New</button>
                 </div>
 
