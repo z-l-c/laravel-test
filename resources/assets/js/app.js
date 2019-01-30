@@ -16,7 +16,21 @@ window.Vue = require('vue');
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('book', require('./components/Book.vue'));
+
+/**
+ * Next, import modules.
+ */
+
+import Croppa from 'vue-croppa';
+import 'vue-croppa/dist/vue-croppa.css';
+Vue.component('croppa', Croppa.component);
+
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    data: {
+      croppa: {},
+      dataUrl: ''
+    }
 });

@@ -1,0 +1,205 @@
+
+#canvas{
+	width: 1045px;
+	height: 600px;
+	margin: 5px;
+	position: relative;
+}
+
+.book-nav{
+	/* float: left;
+	margin-top: 30px;
+	margin-left: 1px; */
+	position: absolute;
+	top: 30px;
+	right: 0;
+}
+
+.animated{
+	-webkit-transition:margin-left 0.2s ease-in-out;
+	-moz-transition:margin-left 0.2s ease-in-out;
+	-o-transition:margin-left 0.2s ease-in-out;
+	-ms-transition:margin-left 0.2s ease-in-out;
+	transition:margin-left 0.2s ease-in-out;
+}
+
+#book{
+	width:942px;
+	height:600px;
+	/* float: left; */
+}
+
+#book .page{
+	width:480px;
+	height:600px;
+	background:white;
+
+	-webkit-box-shadow:0 0 20px rgba(0,0,0,0.2);
+	-moz-box-shadow:0 0 20px rgba(0,0,0,0.2);
+	-ms-box-shadow:0 0 20px rgba(0,0,0,0.2);
+	-o-box-shadow:0 0 20px rgba(0,0,0,0.2);
+	box-shadow:0 0 20px rgba(0,0,0,0.2);
+}
+
+#book .hard{
+	background-image:url(../images/covers.png);
+}
+
+#book .depth{
+	background-image:url(../images/pages-depth.png);
+	position:absolute;
+	top:7px;
+	width:16px;
+	height:590px;
+}
+
+#book .front-side .depth{
+	left:4px;
+	background-position:0 0;
+}
+
+#book .back-side .depth{
+	right:4px;
+	background-position:right 0;
+}
+
+#book .p2{
+	background-position:-471px 0;
+	/*background-position:-480px 0;*/
+}
+
+#book .p99{
+	background-position:-942px 0;
+	/*background-position:-968px 0;*/
+}
+
+#book .p100{
+	background-position:-1413px 0;
+	/*background-position:-1440px 0;*/
+}
+
+#book .even .gradient{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-image:url(../images/right-border.png);
+	background-position:right top;
+	background-repeat: repeat-y;
+}
+
+#book .odd .gradient{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-image:url(../images/left-border.png);
+	background-position:left top;
+	background-repeat: repeat-y;
+}
+
+#book .page-wrapper{
+	-webkit-perspective:2000px;
+	-moz-perspective: 2000px;
+	-ms-perspective: 2000px;
+	perspective: 2000px;
+}
+
+#book .own-size{
+	width:450px;
+	height:582px;
+	background-color:white;
+	overflow:hidden;
+}
+
+#book .every-page{
+	padding: 20px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	z-index: auto;
+}
+
+#book .odd .every-page{
+	padding-left: 35px;
+}
+
+#book .even .every-page{
+	padding-right: 35px;
+}
+
+#book .even .every-page .page-datebar{
+	float: left;
+	height: 30px;
+	border-bottom: 1px solid #ccc;
+	padding-right: 20px;
+}
+
+#book .odd .every-page .page-datebar{
+	float: right;
+	height: 30px;
+	border-bottom: 1px solid #ccc;
+	padding-left: 20px;
+}
+
+#book .every-page .page-datebar .page-date{
+	float: left;
+	line-height: 30px;
+	font-family: fantasy, Georgia;
+}
+
+#book .every-page .page-datebar .page-weather{
+	float: left;
+	margin-left: 5px;
+}
+
+#book .every-page .page-datebar .page-weather img{
+	width: 25px;
+}
+
+#book .even .every-page .page-edit{
+	float: right;
+	height: 30px;
+}
+
+#book .odd .every-page .page-edit{
+	float: left;
+	height: 30px;
+}
+
+#book .every-page .page-edit img{
+	width: 20px;
+}
+
+#book .every-page .page-content{
+	float: left;
+	width: 102%;
+	height: 500px;
+	margin-top: 12px;
+	word-wrap: break-word;
+	word-break: break-all;
+}
+
+#book .loader{
+	background-image:url(../images/loader.gif);
+	width:22px;
+	height:22px;
+	position:absolute;
+	top:280px;
+	left:219px;
+}
+
+#book .shadow{
+	-webkit-transition: -webkit-box-shadow 0.5s;
+	-moz-transition: -moz-box-shadow 0.5s;
+	-o-transition: -webkit-box-shadow 0.5s;
+	-ms-transition: -ms-box-shadow 0.5s;
+
+	-webkit-box-shadow:0 0 20px #ccc;
+	-moz-box-shadow:0 0 20px #ccc;
+	-o-box-shadow:0 0 20px #ccc;
+	-ms-box-shadow:0 0 20px #ccc;
+	box-shadow:0 0 20px #ccc;
+}

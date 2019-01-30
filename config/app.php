@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Hanote'),
 
     /*
     |--------------------------------------------------------------------------
@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Shanghai',
 
     /*
     |--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'zh-CN',
 
     /*
     |--------------------------------------------------------------------------
@@ -167,6 +167,9 @@ return [
         /*
          * Package Service Providers...
          */
+         DaveJamesMiller\Breadcrumbs\BreadcrumbsServiceProvider::class,
+         Intervention\Image\ImageServiceProvider::class,
+         HieuLe\Active\ActiveServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -225,6 +228,10 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs::class,
+        'Image' => Intervention\Image\Facades\Image::class,
+        'Active' => HieuLe\Active\Facades\Active::class,
 
     ],
 
